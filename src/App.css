@@ -1,5 +1,6 @@
 .table {
   border: 1px solid black;
+  margin-top: 25px;
 }
 
 td {
@@ -17,4 +18,7 @@ tr {
 }
 .Quote {
   margin: 50px;
+}
+.Active {
+  background-color: cornsilk;
 }

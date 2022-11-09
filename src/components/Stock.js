@@ -29,12 +29,32 @@ export default function Stock(props) {
   };
 
   const handleInputSearch = (e) => {
-    setSearchInput(e.target.value);
-
-    var result = data.filter((item) => {
-      return item.split(",").includes(e.target.value);
-    });
-    console.log(result);
+    // if (e.target.value === "") {
+    //   setData([...copyData]);
+    // }
+    // var result = copyData.map((item) => {
+    //   if (
+    //     item.split(",")[0].includes(e.target.value) ||
+    //     item.split(",")[0].includes(e.target.value)
+    //   ) {
+    //     return item;
+    //   }
+    // });
+    // var filterData = result.filter((item) => {
+    //   if (item) {
+    //     return item;
+    //   }
+    // });
+    // setData([...filterData]);
+    // -----------------------------
+    if (e.target.value === "") {
+      setData([...copyData]);
+    } else {
+      var res = copyData.filter((item) => {
+        return item.toLowerCase().includes(e.target.value.toLowerCase());
+      });
+    }
+    setData([...res]);
   };
   return (
     <div className="Stock">
